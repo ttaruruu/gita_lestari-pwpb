@@ -1,0 +1,17 @@
+.template-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 40px;
+  justify-content: center;
+}
+
+.template-grid img {
+  width: 180px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.template-grid img:hover {
+  transform: scale(1.08);
+}

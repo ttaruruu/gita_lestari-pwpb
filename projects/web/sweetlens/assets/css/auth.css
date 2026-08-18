@@ -1,0 +1,185 @@
+body {
+  background: #ffd6e8;
+  font-family: Poppins, sans-serif;
+}
+
+.center {
+  text-align: center;
+  margin-top: 100px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 20px;
+  border: none;
+}
+
+button, .btn {
+  background: #ff7eb9;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+video, canvas {
+  width: 300px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* ===== LOADING PAGE ===== */
+
+.loading-bg {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffc0d9, #ff9fc3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-img {
+  width: 40vw;
+  max-width: 300px;
+  min-width: 150px;
+  height: auto;
+}
+
+
+/* ===== SIGN UP PAGE ===== */
+
+.signup-bg {
+  height: 100vh;
+  background: linear-gradient(180deg, #ffc0d9, #ff9fc3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 25px;
+  width: 350px;
+  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+}
+
+.signup-card h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.signup-card label {
+  font-size: 12px;
+  color: #fff;
+}
+
+.signup-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.signup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup-footer a {
+  font-size: 11px;
+  color: #5a5a5a;
+  text-decoration: none;
+}
+
+.signup-footer button {
+  background: #9ad7f5;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 15px;
+  color: white;
+}
+
+.login-link a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== LOGIN PAGE ===== */
+
+.login-bg {
+  height: 100vh;
+  background: linear-gradient(180deg, #ffc0d9, #ff9fc3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 25px;
+  width: 350px;
+  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.3);
+}
+
+.login-card h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.login-card label {
+  font-size: 12px;
+  color: #fff;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-links {
+  font-size: 11px;
+  color: #5a5a5a;
+}
+
+.login-links a {
+  color: #5a5a5a;
+  text-decoration: none;
+}
+
+.login-footer button {
+  background: #9ad7f5;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}

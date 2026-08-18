@@ -1,0 +1,2011 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+
+/* =========================================================
+   PERPUSTAKAANKU
+   PURPLE / WHITE / SOFT EDITORIAL
+========================================================= */
+
+:root {
+    --purple: #503675;
+    --purple-dark: #432b62;
+    --purple-mid: #68458b;
+    --purple-soft: #a47cbd;
+    --purple-light: #d8c8df;
+
+    --lavender: #eee7f2;
+    --lavender-2: #f5f0f7;
+
+    --white: #ffffff;
+    --bg: #faf8fc;
+
+    --black: #292333;
+    --gray: #77717d;
+    --gray-light: #a49ca8;
+
+    --line: #ddd4e3;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--bg);
+    color: var(--black);
+
+    font-family: "DM Sans", Arial, sans-serif;
+}
+
+input,
+select,
+textarea {
+    border-radius: 0;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+body::before {
+    content: "✦";
+
+    position: fixed;
+
+    top: 145px;
+    right: 7%;
+
+    color: #b99ad0;
+    font-size: 18px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+body::after {
+    content: "✦";
+
+    position: fixed;
+
+    bottom: 12%;
+    left: 6%;
+
+    color: #c4a8d6;
+    font-size: 13px;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   NAVBAR
+   FIXED VERSION
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 76px;
+
+    margin: 0;
+    padding: 0 6%;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--line);
+
+    position: relative;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+
+    /* Jangan sampai isi navbar turun */
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   NAV INNER
+   INI YANG MEMBUAT LOGO + MENU SEJAJAR
+========================================================= */
+
+.navbar .nav-inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar .logo {
+    display: inline-flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+    flex-shrink: 0;
+
+    margin: 0;
+    padding: 0;
+
+    position: static;
+    transform: none;
+
+    color: var(--purple) !important;
+
+    text-decoration: none;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 23px;
+    font-weight: 700;
+    font-style: italic;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+
+/* Bintang di logo */
+
+.navbar .logo .logo-star {
+    display: inline-block;
+
+    margin-right: 9px;
+
+    color: var(--purple-soft);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    font-style: normal;
+}
+
+
+/* Kalau logo-star tidak digunakan */
+
+.navbar .logo::before {
+    display: none;
+}
+
+
+/* Hover logo */
+
+.navbar .logo:hover {
+    color: var(--purple-mid) !important;
+}
+
+
+/* =========================================================
+   NAV MENU
+========================================================= */
+
+.navbar .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    flex: 0 0 auto;
+    flex-shrink: 0;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    gap: 34px;
+
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.navbar .nav-menu a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    height: 76px;
+
+    margin: 0;
+    padding: 0;
+
+    color: #30283b;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-menu a:hover {
+    color: var(--purple-mid);
+}
+
+
+/* =========================================================
+   ACTIVE NAV
+========================================================= */
+
+.navbar .nav-menu a.active {
+    color: var(--purple);
+
+    font-weight: 700;
+}
+
+.navbar .nav-menu a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 16px;
+
+    height: 2px;
+
+    background: #8f6aaa;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    width: min(1100px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 65px 0 80px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title {
+    position: relative;
+
+    padding-bottom: 30px;
+
+    margin-bottom: 36px;
+
+    border-bottom: 1px solid #342b3c;
+}
+
+.section-label {
+    margin: 0 0 14px;
+
+    color: #72538d;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.page-title h1 {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(48px, 6vw, 72px);
+
+    line-height: 0.95;
+
+    font-style: italic;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+.page-title h1::after {
+    content: "✦";
+
+    display: inline-block;
+
+    margin-left: 15px;
+
+    color: var(--purple-soft);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    vertical-align: middle;
+}
+
+.page-title > p:last-child {
+    margin-top: 15px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HOME / HERO
+========================================================= */
+
+.hero {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee7f2 0%,
+            #ffffff 65%,
+            #f2eaf5 100%
+        );
+
+    border: 1px solid var(--line);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "✦";
+
+    position: absolute;
+
+    right: 70px;
+    top: 40px;
+
+    color: #c2a7d0;
+
+    font-size: 70px;
+
+    opacity: 0.45;
+
+    transform: rotate(10deg);
+}
+
+.hero::after {
+    content: "✧     ⋆     ✦";
+
+    position: absolute;
+
+    right: 55px;
+    bottom: 45px;
+
+    color: #b99bc8;
+
+    font-size: 15px;
+
+    letter-spacing: 12px;
+
+    opacity: 0.7;
+}
+
+.hero-small {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #72538d;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(55px, 7vw, 88px);
+
+    line-height: 0.9;
+
+    font-style: italic;
+
+    letter-spacing: -3px;
+}
+
+.hero p {
+    max-width: 570px;
+
+    color: #6f6875;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 14px 24px;
+
+    background: var(--purple);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    transition: 0.2s ease;
+}
+
+.hero-button:hover {
+    background: var(--purple-mid);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HOME CONTENT
+========================================================= */
+
+.home-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    margin-top: 70px;
+}
+
+.home-text h2 {
+    max-width: 520px;
+
+    margin: 0 0 18px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    font-style: italic;
+}
+
+.home-text > p:last-child {
+    max-width: 500px;
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.home-cards {
+    display: flex;
+
+    flex-direction: column;
+
+    border-top: 1px solid var(--black);
+}
+
+.home-card {
+    position: relative;
+
+    padding: 25px 5px;
+
+    border-bottom: 1px solid var(--black);
+
+    color: var(--black);
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.home-card:hover {
+    padding-left: 18px;
+
+    background: #f0ebf3;
+}
+
+.card-number {
+    margin-bottom: 8px;
+
+    color: var(--purple-soft);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.home-card h3 {
+    margin-bottom: 7px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 24px;
+}
+
+.home-card p {
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    margin-bottom: 34px;
+}
+
+.search-form {
+    width: 100%;
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 49px;
+
+    padding: 0 16px;
+
+    border: 1px solid #d5cbdc;
+
+    background: white;
+
+    color: var(--black);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.search-form input:focus {
+    border-color: #8763a3;
+
+    box-shadow: 0 0 0 2px rgba(135, 99, 163, 0.1);
+}
+
+.search-form button {
+    height: 49px;
+
+    padding: 0 28px;
+
+    border: none;
+
+    background: var(--purple);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.search-form button:hover {
+    background: var(--purple-mid);
+}
+
+
+/* =========================================================
+   REVIEW LIST
+========================================================= */
+
+.review-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.review-card {
+    position: relative;
+
+    min-height: 220px;
+
+    padding: 27px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    transition: 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(70, 45, 90, 0.08);
+}
+
+.review-card::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    color: #c3a3d2;
+
+    font-size: 13px;
+}
+
+.review-card h3 {
+    margin: 0 35px 6px 0;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 25px;
+}
+
+.book-author {
+    margin-bottom: 14px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+.review-stars {
+    margin-bottom: 16px;
+
+    color: #a16fc0;
+
+    font-size: 19px;
+
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: #4e4855;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.review-user {
+    margin-top: 22px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #eee9f0;
+
+    color: #918996;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    padding: 60px 30px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    text-align: center;
+}
+
+.empty h3 {
+    margin-bottom: 10px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 27px;
+
+    font-style: italic;
+}
+
+.empty p {
+    color: var(--gray);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ACCOUNT
+========================================================= */
+
+.account-card {
+    width: min(760px, 100%);
+
+    margin: 0 auto;
+
+    background: white;
+
+    border: 1px solid var(--black);
+}
+
+.account-header {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    background: #9385b6;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.account-header::after {
+    content: "✦     ✧     ⋆";
+
+    position: absolute;
+
+    right: 25px;
+    top: 18px;
+
+    color: white;
+
+    font-size: 17px;
+
+    opacity: 0.65;
+
+    letter-spacing: 7px;
+}
+
+.account-avatar {
+    width: 65px;
+    height: 65px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid white;
+
+    border-radius: 50%;
+
+    background: var(--purple);
+
+    color: white;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 28px;
+}
+
+.account-header h2 {
+    margin-bottom: 5px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 26px;
+
+    font-style: italic;
+}
+
+.account-header p {
+    color: #f4eef6;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 19px 25px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.info-label {
+    color: var(--gray);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.info-value {
+    color: var(--black);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   BOOK CATALOG
+========================================================= */
+
+.book-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.book-card {
+    display: block;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid var(--line);
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(70, 45, 90, 0.08);
+}
+
+.book-cover {
+    width: 100%;
+    height: 330px;
+
+    background: var(--lavender);
+
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.no-cover {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--purple-soft);
+
+    font-size: 35px;
+}
+
+.book-info {
+    padding: 22px;
+}
+
+.book-label {
+    margin-bottom: 8px;
+
+    color: #9675aa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.book-info h2 {
+    margin-bottom: 7px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 23px;
+}
+
+.book-info > p:last-child {
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOOK DETAIL
+========================================================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: var(--purple-mid);
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.back-link:hover {
+    color: var(--purple);
+}
+
+.book-detail {
+    display: grid;
+
+    grid-template-columns: 330px 1fr;
+
+    gap: 65px;
+
+    padding: 45px;
+
+    background: white;
+
+    border: 1px solid var(--line);
+}
+
+.detail-cover {
+    width: 100%;
+    height: 470px;
+
+    background: var(--lavender);
+
+    overflow: hidden;
+}
+
+.detail-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.detail-info h1 {
+    margin: 10px 0;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 52px;
+
+    line-height: 1.05;
+}
+
+.detail-author {
+    color: #7b6d83;
+
+    font-size: 15px;
+}
+
+.detail-meta {
+    display: flex;
+
+    gap: 50px;
+
+    margin: 30px 0;
+
+    padding: 20px 0;
+
+    border-top: 1px solid #e5dfe8;
+
+    border-bottom: 1px solid #e5dfe8;
+}
+
+.detail-meta span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #988b9e;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.detail-meta strong {
+    color: #342b3c;
+
+    font-size: 14px;
+}
+
+.synopsis h3 {
+    margin-bottom: 8px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 24px;
+}
+
+.synopsis p {
+    color: #6f6875;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   REVIEW FORM
+========================================================= */
+
+.review-form {
+    width: min(760px, 100%);
+
+    margin: 0 auto;
+
+    padding: 42px 40px 45px;
+
+    background: white;
+
+    border: 1px solid #332d36;
+
+    position: relative;
+}
+
+.review-form::before {
+    content: "✦   ✧   ·";
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color: #b997c9;
+
+    font-size: 14px;
+
+    letter-spacing: 8px;
+}
+
+.form-group {
+    margin-bottom: 27px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--purple);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d4c9db;
+
+    background: white;
+
+    color: var(--black);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input {
+    height: 50px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8661a1;
+
+    box-shadow: 0 0 0 2px rgba(134, 97, 161, 0.08);
+}
+
+
+/* =========================================================
+   BOOK SEARCH - BUAT ULASAN
+========================================================= */
+
+.book-search-form {
+    position: relative;
+}
+
+.book-search-results {
+    margin-top: 6px;
+
+    background: white;
+
+    border: 1px solid #d7ccdd;
+
+    position: relative;
+
+    z-index: 50;
+
+    box-shadow: 0 8px 25px rgba(70, 45, 90, 0.07);
+}
+
+.book-search-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 15px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #eee9f0;
+
+    transition: 0.15s ease;
+}
+
+.book-search-item:last-child {
+    border-bottom: none;
+}
+
+.book-search-item:hover {
+    background: #f5f0f7;
+}
+
+.search-book-cover {
+    width: 48px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    background: #eee7f1;
+
+    overflow: hidden;
+}
+
+.search-book-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.search-book-info strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 17px;
+}
+
+.search-book-info span {
+    color: #7c7482;
+
+    font-size: 12px;
+}
+
+.search-empty {
+    padding: 16px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    background: white;
+}
+
+
+/* =========================================================
+   SELECTED BOOK
+========================================================= */
+
+.selected-book {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    margin-bottom: 30px;
+
+    background: #f5f0f7;
+
+    border: 1px solid #d9cce0;
+}
+
+.selected-book-cover {
+    width: 90px;
+    height: 125px;
+
+    flex-shrink: 0;
+
+    background: #e6dce9;
+
+    overflow: hidden;
+}
+
+.selected-book-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.selected-book-info {
+    padding-top: 4px;
+}
+
+.selected-book-info h2 {
+    margin: 7px 0;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.selected-book-info p {
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+.change-book {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--purple-mid);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.rating {
+    margin: 25px 0;
+}
+
+.rating-title {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--purple);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.stars {
+    display: flex;
+
+    flex-direction: row-reverse;
+
+    justify-content: flex-end;
+
+    width: fit-content;
+
+    gap: 3px;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    color: #d4c7db;
+
+    font-size: 31px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #a16fc0;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn {
+    width: 100%;
+
+    min-height: 49px;
+
+    padding: 14px;
+
+    border: 1px solid var(--purple-dark);
+
+    background: var(--purple);
+
+    color: white;
+
+    font-family: "DM Sans", Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--purple-mid);
+
+    transform: translateY(-1px);
+
+    box-shadow: 4px 4px 0 #d6c4dd;
+}
+
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.alert {
+    padding: 15px 17px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.alert-error {
+    background: #f8eeee;
+
+    border: 1px solid #e3caca;
+
+    color: #8c4747;
+}
+
+.alert-success {
+    background: #f0f7f1;
+
+    border: 1px solid #cbdcca;
+
+    color: #527357;
+}
+
+.alert a {
+    color: inherit;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CHOOSE BOOK
+========================================================= */
+
+.choose-book {
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border: 1px dashed #cbbbd4;
+
+    background: #fbf9fc;
+}
+
+.choose-book-star {
+    margin-bottom: 10px;
+
+    color: #b18ac3;
+
+    font-size: 25px;
+}
+
+.choose-book h3 {
+    margin-bottom: 8px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 23px;
+}
+
+.choose-book p {
+    color: #817985;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   AUTH / LOGIN / REGISTER
+========================================================= */
+
+.auth-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #503675,
+            #68458b
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.auth-page::before {
+    content: "✦       ✧          ⋆       ✦";
+
+    position: absolute;
+
+    top: 55px;
+    left: 8%;
+
+    color: white;
+
+    font-size: 20px;
+
+    letter-spacing: 18px;
+
+    opacity: 0.5;
+}
+
+.auth-page::after {
+    content: "✧       ✦          ⋆";
+
+    position: absolute;
+
+    right: 8%;
+    bottom: 60px;
+
+    color: white;
+
+    font-size: 18px;
+
+    letter-spacing: 18px;
+
+    opacity: 0.5;
+}
+
+.auth-box {
+    width: 390px;
+
+    max-width: 100%;
+
+    padding: 42px;
+
+    background: white;
+
+    border: 1px solid var(--black);
+
+    box-shadow: 9px 9px 0 rgba(33, 26, 41, 0.3);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.register-box {
+    width: 450px;
+}
+
+.auth-logo {
+    margin-bottom: 10px;
+
+    color: var(--purple);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    font-style: italic;
+}
+
+.auth-logo::after {
+    content: " ✦";
+
+    color: var(--purple-soft);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    font-style: normal;
+}
+
+.auth-subtitle {
+    margin-bottom: 30px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.auth-link {
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+.auth-link a {
+    color: var(--purple);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    padding: 30px 6%;
+
+    background: white;
+
+    border-top: 1px solid var(--line);
+
+    color: #8a818f;
+
+    text-align: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: auto;
+        min-height: 76px;
+
+        padding: 16px 5%;
+    }
+
+    .navbar .nav-inner {
+        height: auto;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .navbar .nav-menu {
+        width: 100%;
+
+        margin-left: 0;
+
+        justify-content: flex-start;
+
+        gap: 26px;
+
+        overflow-x: auto;
+    }
+
+    .navbar .nav-menu a {
+        height: 35px;
+    }
+
+    .navbar .nav-menu a.active::after {
+        bottom: -1px;
+    }
+
+    .container {
+        width: min(92%, 760px);
+
+        padding-top: 48px;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book-detail {
+        grid-template-columns: 250px 1fr;
+
+        gap: 35px;
+
+        padding: 30px;
+    }
+
+    .detail-cover {
+        height: 380px;
+    }
+
+    .home-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 17px 20px;
+    }
+
+    .navbar .nav-inner {
+        gap: 10px;
+    }
+
+    .navbar .logo {
+        font-size: 22px;
+    }
+
+    .navbar .nav-menu {
+        gap: 21px;
+
+        overflow-x: auto;
+    }
+
+    .navbar .nav-menu a {
+        height: 35px;
+
+        font-size: 13px;
+    }
+
+    .container {
+        width: calc(100% - 28px);
+
+        padding: 38px 0 55px;
+    }
+
+    .page-title h1 {
+        font-size: 46px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .review-list {
+        grid-template-columns: 1fr;
+    }
+
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-cover {
+        height: 390px;
+    }
+
+    .book-detail {
+        grid-template-columns: 1fr;
+
+        padding: 20px;
+
+        gap: 30px;
+    }
+
+    .detail-cover {
+        height: 430px;
+    }
+
+    .detail-info h1 {
+        font-size: 42px;
+    }
+
+    .home-cards {
+        width: 100%;
+    }
+
+    .hero {
+        min-height: 400px;
+
+        padding: 38px 25px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero::before,
+    .hero::after {
+        opacity: 0.4;
+    }
+
+    .account-card {
+        width: 100%;
+    }
+
+    .info-row {
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+
+    .review-form {
+        padding: 28px 20px;
+    }
+
+    .selected-book {
+        gap: 16px;
+
+        padding: 17px;
+    }
+
+    .selected-book-cover {
+        width: 80px;
+        height: 115px;
+    }
+
+    .selected-book-info h2 {
+        font-size: 22px;
+    }
+
+    .auth-box {
+        padding: 32px 24px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .navbar .nav-menu {
+        gap: 18px;
+    }
+
+    .navbar .nav-menu a {
+        font-size: 12px;
+    }
+
+    .page-title h1 {
+        font-size: 40px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .detail-info h1 {
+        font-size: 36px;
+    }
+
+    .selected-book {
+        align-items: flex-start;
+    }
+
+    .selected-book-cover {
+        width: 65px;
+        height: 95px;
+    }
+}
