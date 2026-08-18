@@ -1,1 +1,0 @@
-# gita_lestari-pwpb
