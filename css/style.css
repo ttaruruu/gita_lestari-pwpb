@@ -2377,3 +2377,95 @@ footer span {
         font-size: 51px;
     }
 }
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    /* NAV */
+    .nav nav {
+        display: none;
+    }
+
+    /* HERO */
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 24px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+        line-height: 0.9;
+    }
+
+    /* ABOUT */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image img {
+        height: auto;
+    }
+
+    .about-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .about-facts > div {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    /* WEB PROJECT */
+    .web-projects {
+        grid-template-columns: 1fr;
+    }
+
+    /* GAME */
+    .game-card {
+        grid-template-columns: 1fr;
+    }
+
+    .game-content {
+        padding: 30px;
+    }
+
+    .game-content h4 {
+        font-size: 42px;
+    }
+
+    /* GRAPHIC DESIGN */
+    .design-intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-folders {
+        grid-template-columns: 1fr;
+    }
+
+    .project-folder {
+        min-height: 180px;
+    }
+
+    .folder-content h3 {
+        font-size: 28px;
+    }
+
+    /* SKILLS */
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* SECTION */
+    .section {
+        padding: 80px 24px;
+    }
+
+    .section-heading h2 {
+        font-size: 48px;
+    }
+}
